@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Invitation</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container" style="background-color: #d4a59a;">
+        <div id="name-form" class="form-container">
+            <h1>🌸 Wedding Invitation🌸</h1>
+            <p>Please enter your name to generate your invitation:</p>
+            <input type="text" id="guest-name" placeholder="Your name">
+            <button onclick="generateInvitation()">Generate</button>
+        </div>
+
+        <div id="invitation-card" class="invitation hidden" style="color: #000;">
+            <div class="invitation-border">
+                <div class="corner corner-tl"><i class="fas fa-heart"></i></div>
+                <div class="corner corner-tr"><i class="fas fa-heart"></i></div>
+                
+                <h1 class="title">Wedding Invitation</h1>
+                <div class="divider"><i class="fas fa-heart"></i></div>
+                
+                <p class="intro">You're Cordially Invited</p>
+                
+                <div class="couple-names">
+                    <i class="fas fa-dove"></i>
+                    <span>Omom & Victor</span>
+                    <i class="fas fa-dove"></i>
+                </div>
+                
+                <div class="details">
+                    <p>Saturday, the 7th of June 2025</p>
+                    <p>At 10am Prompt</p>
+                    <p>Holy Trinity Catholic Church</p>
+                    <p>Akim Navy Barracks IBB Calabar</p>
+                </div>
+                
+                <div class="personal-greeting">
+                    <p>Dear <span id="personalized-name">Guest</span>,</p>
+                    <p>We would be honored by your presence as we exchange vows and begin our journey together as husband and wife.</p>
+                </div>
+                
+                <div class="rsvp">
+                    <p><i class="fas fa-envelope"></i> Please RSVP by May 30th</p>
+                    <p><i class="fas fa-phone"></i> (555) 123-4567</p>
+                </div>
+                
+                <div class="divider"><i class="fas fa-heart"></i></div>
+                
+                <div class="footer">
+                    <p>We look forward to celebrating with you!</p>
+                </div>
+                
+                <div class="corner corner-bl"><i class="fas fa-heart"></i></div>
+                <div class="corner corner-br"><i class="fas fa-heart"></i></div>
+            </div>
+            
+            <button onclick="resetInvitation()" class="reset-btn">I am attending </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
