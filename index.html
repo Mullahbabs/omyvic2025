@@ -38,9 +38,9 @@
                     <p>Holy Trinity Catholic Church</p>
                     <p>Akim Navy Barracks IBB Calabar</p>
                 </div>
-                
+            <form id="contactForm" onsubmit="sendMail(event)">    
                 <div class="personal-greeting">
-                    <p>Dear <span id="personalized-name">Guest</span>,</p>
+                    <p>Dear <span id="personalized-name" name="name">Guest</span>,</p>
                     <p>We would be honored by your presence as we exchange vows and begin our journey together as husband and wife.</p>
                 </div>
                 
@@ -59,10 +59,39 @@
                 <div class="corner corner-bl"><i class="fas fa-heart"></i></div>
                 <div class="corner corner-br"><i class="fas fa-heart"></i></div>
             </div>
+            <div class="action-buttons">
+                <button onclick="submitRSVP()" type="submit" class="submit-btn">Submit RSVP</button>
+            </div>
+        </form>    
             
-            <button onclick="resetInvitation()" class="reset-btn">I am attending </button>
+            <div id="success-message" class="hidden">
+                <p>Thank you! Your RSVP has been received.</p>
+            </div>
         </div>
     </div>
     <script src="script.js"></script>
+
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
+	<script>
+		// Initialize EmailJS with your User ID
+		(function() {
+			emailjs.init("S-xQwmEV2I8oavOc1");
+		})();
+	
+		// Function to handle form submission
+		function sendMail(event) {
+			event.preventDefault();  // Prevent default form submission
+	
+			// Use EmailJS to send form data
+			emailjs.sendForm('service_5tf829h', 'template_y9u8ba5', '#contactForm')
+			.then((result) => {
+				alert("Reservation made. See you @ OmyVic2025");
+				document.getElementById("contactForm").reset();  // Optional: reset form after submission
+			}, (error) => {
+				alert("Failed to send form: " + error.text);
+			});
+		}
+	  </script>
 </body>
 </html>
