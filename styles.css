@@ -100,15 +100,62 @@ button:hover {
     color: #d4a59a;
 }
 
+.couple-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 25px 0;
+    position: relative;
+}
+
+.couple-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #d4a59a;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 15px;
+}
+
+/* Update the .couple-names to work with the image */
 .couple-names {
     font-family: 'Playfair Display', serif;
     font-size: 1.8rem;
-    margin: 25px 0;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 15px;
     color: #415472;
+    margin: 0; /* Remove the previous margin */
+}
+
+/* Add decorative elements */
+.couple-decoration {
+    position: absolute;
+    color: #d4a59a;
+    font-size: 1.5rem;
+}
+
+.couple-decoration.left {
+    left: 10%;
+    transform: rotate(-15deg);
+}
+
+.couple-decoration.right {
+    right: 10%;
+    transform: rotate(15deg);
+}
+
+/* Animation for the image */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+.couple-image {
+    animation: float 4s ease-in-out infinite;
 }
 
 .details p {
